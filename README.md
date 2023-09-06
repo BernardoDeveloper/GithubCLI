@@ -10,6 +10,6 @@ Show the github profile in your prompt
 ### Features
 - [x] Parameters
 - [x] Get avatar user
-- [ ] Show markdown apresentation file
+- [|] Show markdown apresentation file
 - [ ] Description profile
 - [ ] Main projects

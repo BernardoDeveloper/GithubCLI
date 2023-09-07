@@ -2,6 +2,8 @@
 
 Show the github profile in your prompt
 
+![Alt Text](./resources/apresentation.gif)
+
 ### Technologies
 - [Python](https://www.python.org/)
 - [Typer](https://typer.tiangolo.com/)
@@ -10,6 +12,6 @@ Show the github profile in your prompt
 ### Features
 - [x] Parameters
 - [x] Get avatar user
-- [|] Show markdown apresentation file
+- [ ] Show markdown apresentation file
 - [ ] Description profile
 - [ ] Main projects

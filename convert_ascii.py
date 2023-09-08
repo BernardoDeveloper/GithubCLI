@@ -2,7 +2,7 @@ import PIL.Image
 
 ASCII_CHARACTERS = ["@", "#", "S", "%", "?", "*", "+", ";", ":", ",", "."]
 
-def resize(image, new_width=100):
+def resize(image, new_width=50):
     width, heigth = image.size
     ratio = heigth / width
     new_height = int(new_width * ratio)
@@ -16,8 +16,7 @@ def pixels_to_ascii(image):
     pixels = image.getdata()
     return "".join([ASCII_CHARACTERS[pixel//25] for pixel in pixels])
 
-def convert_image_to_ascii(path, new_width=100):
-    # path = "image.jpg"
+def convert_image_to_ascii(path, new_width=50):
     try:
         image = PIL.Image.open(path)
     except:

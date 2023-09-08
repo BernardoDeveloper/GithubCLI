@@ -30,16 +30,19 @@ def main(profile: Annotated[Optional[str], typer.Argument()] = None):
 
             print(convert_image_to_ascii(path_img))
             print("\n==================================\n")
-
-            # Markdown File
-            markdown_url = "https://raw.githubusercontent.com/" + profile + "/" + profile + "/main/README.md"
-            'Requests:' in markdown_url
-            url = requests.get(markdown_url)
-            url.headers['Content-Type']
-
-            print(url.text)
         else:
             print("Failed to request")
+        
+        # Markdown File
+        markdown_url = "https://raw.githubusercontent.com/" + profile + "/" + profile + "/main/README.md"
+        'Requests:' in markdown_url
+        markdown = requests.get(markdown_url)
+        markdown.headers['Content-Type']
+
+        if markdown.status_code == 200:
+            print(markdown.text)
+        else:
+            print("This profile don't has README.md file")
     except Exception:
         typer.echo(typer.style("[ERROR]: Code is not running", fg=typer.colors.RED))
         print(Exception)

@@ -29,11 +29,15 @@ def main(profile: Annotated[Optional[str], typer.Argument()] = None):
             fp.close()
 
             print(convert_image_to_ascii(path_img))
+            print("\n==================================\n")
 
             # Markdown File
-            markdown_url = "https://raw.githubusercontent.com/" + profile + profile + "main/README.md"
-            readme = requests.get(markdown_url)
-            print(readme.text())
+            markdown_url = "https://raw.githubusercontent.com/" + profile + "/" + profile + "/main/README.md"
+            'Requests:' in markdown_url
+            url = requests.get(markdown_url)
+            url.headers['Content-Type']
+
+            print(url.text)
         else:
             print("Failed to request")
     except Exception:
